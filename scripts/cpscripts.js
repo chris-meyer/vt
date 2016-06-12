@@ -1,4 +1,22 @@
+
+function readEvents(){
+  $.getJSON( "data/events.json", function( data ) {
+    console.log("Got events JSON");
+    var items = [];
+    $.each( data, function( key, val ) {
+      //items.push( "<li id='" + key + "'>" + val + "</li>" );
+      console.log(val);
+    });
+
+//    $( "<ul/>", {
+//      "class": "my-new-list",
+//      html: items.join( "" )
+//    }).appendTo( "body" );
+  });
+}
+
 jQuery(document).ready(function ($) {
+  readEvents();
 //Determines how far to "look ahead" when considering the vertical space
  var heightFactor = 0.2;
   console.log('window.scrollTop() is '+$(window).scrollTop());
