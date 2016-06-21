@@ -4,9 +4,9 @@ function readEvents(){
     console.log("Got events JSON");
     var items = [];
     var timeLineContainer = $('section#cd-timeline');
-    $.each( data, function( key, val ) {
+    $.each( data, function( key, el ) {
       //items.push( "<li id='" + key + "'>" + val + "</li>" );
-      console.log(val);
+      console.log(el);
 
       //Create the HTML
       var timeLineItem = [
@@ -15,10 +15,10 @@ function readEvents(){
             '<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">',
           '</div>',
           '<div class="cd-timeline-content is-hidden">',
-    				'<h2>Title of section 1</h2>',
-    				'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>',
-            '<a href="#0" class="cd-read-more">Read more</a>',
-    				'<span class="cd-date">Jan 14</span>',
+    				'<h2>'+el.title+'</h2>',
+    				'<p>'+el.description+'</p>',
+            //'<a href="#0" class="cd-read-more">Read more</a>',
+    				'<span class="cd-date">'+el.date+'</span>',
     			'</div>',
         '</div>'
       ].join('\n');
