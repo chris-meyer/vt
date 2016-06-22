@@ -1,4 +1,8 @@
-
+var timeLineEventIcons = [
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg',
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg'
+];
 function readEvents(){
   $.getJSON( "data/events.json", function( data ) {
     console.log("Got events JSON");
@@ -15,22 +19,24 @@ function readEvents(){
             '<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">',
           '</div>',
           '<div class="cd-timeline-content is-hidden">',
-    				'<h2>'+el.title+'</h2>',
-    				'<p>'+el.description+'</p>'
+    				'<h2>'+el.title+'</h2>'
       ];
 
+      if(el.hasOwnProperty('photo')){
+        timeLineItem.push(
+          '<img class="cd-timeline-content-img" src="'+el.photo+'" alt="Picture">'
+        );
+      }
+
       timeLineItem.push(
+            '<p>'+el.description+'</p>',
             '<span class="cd-date">'+el.date+'</span>',
           '</div>',
         '</div>'
       );
 
       timeLineItem = timeLineItem.join('\n');
-            //'<a href="#0" class="cd-read-more">Read more</a>',
-    	// 			'<span class="cd-date">'+el.date+'</span>',
-    	// 		'</div>',
-      //   '</div>'
-      // ].join('\n');
+
       //Add the HTML to the DOM
       timeLineContainer.append(timeLineItem);
     });
