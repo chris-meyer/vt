@@ -282,6 +282,15 @@ header h1 {
   border: 7px solid transparent;
   border-right: 7px solid #ffffff;
 }
+/* Custom CSS for the Timeline Images */
+.cd-timeline-content-img{
+  display: block;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 400px;
+}
+
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
     font-size: 20px;
