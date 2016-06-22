@@ -16,12 +16,21 @@ function readEvents(){
           '</div>',
           '<div class="cd-timeline-content is-hidden">',
     				'<h2>'+el.title+'</h2>',
-    				'<p>'+el.description+'</p>',
-            //'<a href="#0" class="cd-read-more">Read more</a>',
-    				'<span class="cd-date">'+el.date+'</span>',
-    			'</div>',
+    				'<p>'+el.description+'</p>'
+      ];
+
+      timeLineItem.push(
+            '<span class="cd-date">'+el.date+'</span>',
+          '</div>',
         '</div>'
-      ].join('\n');
+      );
+
+      timeLineItem = timeLineItem.join('\n');
+            //'<a href="#0" class="cd-read-more">Read more</a>',
+    	// 			'<span class="cd-date">'+el.date+'</span>',
+    	// 		'</div>',
+      //   '</div>'
+      // ].join('\n');
       //Add the HTML to the DOM
       timeLineContainer.append(timeLineItem);
     });
