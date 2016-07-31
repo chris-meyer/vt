@@ -27,7 +27,7 @@ img {
 }
 
 h1, h2 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Tangerine", "Open Sans", sans-serif;
   font-weight: bold;
 }
 
@@ -72,8 +72,20 @@ header h1 {
   }
   header h1 {
     font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
+}
+
+header#timeline-header > div{
+  padding-top: 4em;
+}
+
+header#timeline-header > *{
+  line-height: 2em;
+}
+
+header#timeline-header > h2 {
+
 }
 
 #cd-timeline {
@@ -93,6 +105,9 @@ header h1 {
   background: #d7e4ed;
 }
 @media only screen and (min-width: 1170px) {
+  header#timeline-header > div{
+    padding-top: 7em;
+  }
   #cd-timeline {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -294,7 +309,7 @@ header h1 {
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
     font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
   .cd-timeline-content p {
     font-size: 16px;

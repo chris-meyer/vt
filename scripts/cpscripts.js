@@ -1,5 +1,6 @@
 var headerContent = [
-  'Test Header Content'
+  'Test Header Content',
+  'Subheading text...'
 ];
 var timeLineEventIcons = [
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
@@ -8,7 +9,7 @@ var timeLineEventIcons = [
 ];
 
 function setHeader(){
-  $('#timeline-header').html('<h1>'+headerContent[0]+'</h1>');
+  $('#timeline-header').html('<div><h1>'+headerContent[0]+'</h1><h2>'+headerContent[1]+'</h2></div>');
 }
 
 function readEvents(){
