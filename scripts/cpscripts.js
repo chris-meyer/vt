@@ -1,8 +1,16 @@
+var headerContent = [
+  'Test Header Content'
+];
 var timeLineEventIcons = [
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg',
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg'
 ];
+
+function setHeader(){
+  $('#timeline-header').html('<h1>'+headerContent[0]+'</h1>');
+}
+
 function readEvents(){
   $.getJSON( "data/events.json", function( data ) {
     console.log("Got events JSON");
@@ -71,5 +79,6 @@ function setVisClasses(){
 }
 
 jQuery(document).ready(function ($) {
+  setHeader();
   readEvents();
 });
