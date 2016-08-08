@@ -54,25 +54,48 @@ function readEvents(){
 }
 
 function setVisClasses(){
+  //The height of the visible window
+  if(window.innerHeight)
+  {
+    var windowHeight = window.innerHeight;
+  }
+  else if(document.body.clientHeight)
+  {
+    var windowHeight = document.body.clientHeight;
+  }
+  else
+  {
+    var windowHeight = document.documentElement.clientHeight;
+  }
+
+  /*
+  * In the below calculation: $(window).scrollTop() + windowHeight * heightFactor
+  * $(window).scrollTop() = The current top of the window in pixels
+  * windowHeight = the height of the visible window in the browser
+  * heightFactor = the factor used to reduce how far to "look ahead" when scrolling down
+  * This creates an area and if an event lands in that area, it is shown.
+  */
+
   //Determines how far to "look ahead" when considering the vertical space
-   var heightFactor = 0.1;
-    //console.log('window.scrollTop() is '+$(window).scrollTop());
-    //console.log('window.height is '+$(window).height());
-    //console.log('init vertical range is '+ ($(window).scrollTop() + $(window).height() * heightFactor));
+   var heightFactor = 0.3;
+    //console.log('window.height is '+windowHeight);
+    //console.log('init vertical range is '+ ($(window).scrollTop() + windowHeight * heightFactor));
       var $timeline_block = $('.cd-timeline-block');
       $timeline_block.each(function (i,v) {
-      //    console.log('offset().top for '+i+' is '+$(this).offset().top);
+      //console.log('offset().top for '+i+' is '+$(this).offset().top);
 
-          if ($(this).offset().top > $(window).scrollTop() + $(window).height() * heightFactor) {
-      //        console.log("hiding "+i);
+          if ($(this).offset().top > $(window).scrollTop() + windowHeight * heightFactor) {
+              //console.log("hiding "+i+" because offset = " + $(this).offset().top);
               $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
           }
       });
       $(window).on('scroll', function () {
-      //    console.log("new vertical range: " + ($(window).scrollTop() + $(window).height() * heightFactor));
+          //console.log("new scrollTop: " + $(window).scrollTop());
+          //console.log("new vertical range: " + ($(window).scrollTop() + windowHeight * heightFactor));
           $timeline_block.each(function (i,v) {
-              if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * heightFactor && $(this).find('.cd-timeline-img').hasClass('is-hidden')) {
-      //          console.log("onscroll: showing "+i+" because top offset within range");
+              //if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * heightFactor && $(this).find('.cd-timeline-img').hasClass('is-hidden')) {
+              if ($(this).find('.cd-timeline-img').hasClass('is-hidden') && $(this).offset().top <= $(window).scrollTop() + windowHeight * heightFactor) {
+                  //console.log("onscroll: showing "+i+" because top offset "+$(this).offset().top+" within range");
                   $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
               }
           });
