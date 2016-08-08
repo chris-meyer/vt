@@ -2,6 +2,9 @@ var headerContent = [
   'Happy 5th Anniversary!',
   'It\'s been a wonderful ride! Scroll to see some of the hightlights!'
 ];
+var footerContent = [
+  'I hope you enjoyed this trip down memory lane. I look forward to making more memories with you!'
+];
 var timeLineEventIcons = [
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg',
@@ -10,6 +13,10 @@ var timeLineEventIcons = [
 
 function setHeader(){
   $('#timeline-header').html('<div><h1>'+headerContent[0]+'</h1><h2>'+headerContent[1]+'</h2></div>');
+}
+
+function setFooter(){
+  $('#timeline-footer').html('<p>'+footerContent[0]+'</p>');
 }
 
 function readEvents(){
@@ -104,5 +111,6 @@ function setVisClasses(){
 
 jQuery(document).ready(function ($) {
   setHeader();
+  setFooter();
   readEvents();
 });

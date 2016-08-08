@@ -26,7 +26,7 @@ img {
   max-width: 100%;
 }
 
-h1, h2 {
+h1, h2, footer > * {
   font-family: "Tangerine", "Open Sans", sans-serif;
   font-weight: bold;
 }
@@ -54,7 +54,8 @@ Modules - reusable parts of our design
 Main components
 
 -------------------------------- */
-header {
+header,
+footer {
   height: 200px;
   line-height: 200px;
   text-align: center;
@@ -88,6 +89,12 @@ header#timeline-header h1{
 header#timeline-header h2 {
   font-size: 2rem;
   line-height: 2.5rem;
+}
+
+footer p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  padding-top: 4rem;
 }
 
 #cd-timeline {
