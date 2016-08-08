@@ -1,6 +1,6 @@
 var headerContent = [
-  'Test Header Content',
-  'Subheading text...'
+  'Happy 5th Anniversary!',
+  'It\'s been a wonderful ride! Scroll to see some of the hightlights!'
 ];
 var timeLineEventIcons = [
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
@@ -77,7 +77,7 @@ function setVisClasses(){
   */
 
   //Determines how far to "look ahead" when considering the vertical space
-   var heightFactor = 0.3;
+   var heightFactor = 0.35;
     //console.log('window.height is '+windowHeight);
     //console.log('init vertical range is '+ ($(window).scrollTop() + windowHeight * heightFactor));
       var $timeline_block = $('.cd-timeline-block');

@@ -80,12 +80,14 @@ header#timeline-header > div{
   padding-top: 4em;
 }
 
-header#timeline-header > *{
-  line-height: 2em;
+header#timeline-header h1{
+  font-size: 4rem;
+  line-height: 4.5rem;
 }
 
-header#timeline-header > h2 {
-
+header#timeline-header h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 #cd-timeline {
@@ -309,7 +311,7 @@ header#timeline-header > h2 {
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
     font-size: 20px;
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
   .cd-timeline-content p {
     font-size: 16px;
