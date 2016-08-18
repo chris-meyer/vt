@@ -3,7 +3,7 @@ var headerContent = [
   'It\'s been a wonderful ride! Scroll to see some of the hightlights!'
 ];
 var footerContent = [
-  'I hope you enjoyed this trip down memory lane. I look forward to making more memories with you!'
+  'I hope you enjoyed this trip down memory lane. I look forward to making more memories with you for many years to come!'
 ];
 var timeLineEventIcons = [
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg',
