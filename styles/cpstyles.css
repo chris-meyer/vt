@@ -82,18 +82,18 @@ header#timeline-header > div{
 }
 
 header#timeline-header h1{
-  font-size: 4rem;
-  line-height: 4.5rem;
+  font-size: 5rem;
+  line-height: 5.5rem;
 }
 
 header#timeline-header h2 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
 }
 
 footer p {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
   padding-top: 4rem;
 }
 
@@ -260,7 +260,8 @@ footer p {
   background: #ffffff;
   border-radius: 0.25em;
   padding: 1em;
-  box-shadow: 0 3px 0 #d7e4ed;
+  /*box-shadow: 0 3px 0 #d7e4ed;*/
+  box-shadow: 4px 4px 10px #d7e4ed
 }
 .cd-timeline-content::after {
   clear: both;
@@ -318,11 +319,11 @@ footer p {
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
     font-size: 20px;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .cd-timeline-content p {
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     font-size: 14px;
@@ -350,7 +351,7 @@ footer p {
     left: 122%;
     top: 6px;
     font-size: 16px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
